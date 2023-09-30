@@ -1,0 +1,21 @@
+
+FROM python:3.11-slim
+
+ENV POETRY_VERSION=1.6.1 \
+    POETRY_VIRTUALENVS_CREATE=false \
+    POETRY_HOME="/opt/poetry" \
+    POETRY_CACHE_DIR="/var/cache/pypoetry"
+
+RUN apt-get -y update && apt-get install -y --no-install-recommends wget && \
+    pip install "poetry==$POETRY_VERSION" && poetry --version
+
+EXPOSE 8000
+WORKDIR /app
+
+ADD src/poetry.lock src/pyproject.toml /app/
+
+RUN poetry install
+
+COPY ./src/ .
+
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]

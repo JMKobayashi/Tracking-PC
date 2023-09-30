@@ -17,7 +17,8 @@ class MongoDatabase():
         if use_connection_string:
             mongo_connection = connection_string
         elif self.user and self.password:
-            mongo_connection = f'mongodb://{self.user}:{self.password}@{self.host}:{self.port}/{self.database}?authSource={self.authentication_source}'
+            mongo_connection = (f'mongodb://{self.user}:{self.password}@{self.host}:{self.port}/{self.database}'
+                                f'?authSource={self.authentication_source}')
         else:
             mongo_connection = f'mongodb://{self.host}:{self.port}'
 
