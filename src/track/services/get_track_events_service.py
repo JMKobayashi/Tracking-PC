@@ -6,6 +6,8 @@ class GetTrackEventsService:
         self._mongo_repository = mongo_repository
 
     async def get_track_events(self):
+        print('Retrieving all track events')
         document = await self._mongo_repository.get_all()
+        print('All track events retrieved')
 
         return document

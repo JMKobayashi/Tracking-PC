@@ -10,5 +10,6 @@ class TrackEventsUseCase(BaseUseCase):
         self._service = track_event_service
 
     async def run(self):
+        print('Running track event creation')
         track_event = TrackEventCreate(request='POST /track', event_time=datetime.now())
         return await self._service.create_track_event(track_event.dict())

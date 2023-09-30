@@ -7,6 +7,8 @@ class TrackEventService:
         self._mongo_repository = mongo_repository
 
     async def create_track_event(self, params: TrackEventCreate):
+        print('Inserting new track event to database')
         document = await self._mongo_repository.insert_one(params)
+        print('New track event inserted')
 
         return document

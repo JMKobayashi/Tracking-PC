@@ -13,8 +13,10 @@ router = APIRouter()
 async def create_track_event(request_event_use_case: TrackEventsUseCase =
                              Depends(Provide[Container.track_events_use_case])):
     try:
+        print('Create track event')
         return await request_event_use_case.run()
     except Exception as exception:
+        print(exception.args)
         raise HTTPException(status_code=500, detail='Something went wrong')
 
 
@@ -23,8 +25,10 @@ async def create_track_event(request_event_use_case: TrackEventsUseCase =
 async def get_track_events(get_track_event_use_case: GetTrackEventsUseCase =
                            Depends(Provide[Container.get_track_events_use_case])):
     try:
+        print('Retrieve all track events')
         return await get_track_event_use_case.run()
     except Exception as exception:
+        print(exception.args)
         raise HTTPException(status_code=500, detail='Something went wrong')
 
 

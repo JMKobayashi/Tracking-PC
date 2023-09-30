@@ -1,6 +1,6 @@
 import requests
 from apscheduler.schedulers.background import BlockingScheduler
-TRACK_API_URL = 'http://localhost:8080/track'
+TRACK_API_URL = 'https://track-challenge-ucu2fzh5qa-uc.a.run.app/track'
 
 
 def track_request():

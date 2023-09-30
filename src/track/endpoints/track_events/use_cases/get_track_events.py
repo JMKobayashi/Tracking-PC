@@ -7,4 +7,5 @@ class GetTrackEventsUseCase(BaseUseCase):
         self._service = get_track_event_service
 
     async def run(self):
+        print('Running track event retrieve')
         return await self._service.get_track_events()
