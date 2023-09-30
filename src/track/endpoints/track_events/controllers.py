@@ -1,5 +1,3 @@
-import logging
-
 from fastapi import APIRouter, Depends, HTTPException, FastAPI
 from dependency_injector.wiring import inject, Provide
 from track.endpoints.track_events.use_cases.track_event import TrackEventsUseCase
@@ -15,10 +13,8 @@ router = APIRouter()
 async def create_track_event(request_event_use_case: TrackEventsUseCase =
                              Depends(Provide[Container.track_events_use_case])):
     try:
-        logging.info('Received creation track event')
         return await request_event_use_case.run()
     except Exception as exception:
-        logging.exception(exception.args)
         raise HTTPException(status_code=500, detail='Something went wrong')
 
 
@@ -27,10 +23,8 @@ async def create_track_event(request_event_use_case: TrackEventsUseCase =
 async def get_track_events(get_track_event_use_case: GetTrackEventsUseCase =
                            Depends(Provide[Container.get_track_events_use_case])):
     try:
-        logging.info('Received retrieve track events')
         return await get_track_event_use_case.run()
     except Exception as exception:
-        logging.exception(exception.args)
         raise HTTPException(status_code=500, detail='Something went wrong')
 
 

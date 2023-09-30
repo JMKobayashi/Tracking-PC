@@ -11,7 +11,6 @@ from track.repositories.track_event_repository import TrackEventRepository
 
 
 class Container(containers.DeclarativeContainer):
-
     mongo_database = providers.Singleton(MongoDatabase, database='', host='', port='',
                                          user='', password='', authentication_source='',
                                          use_connection_string=True,

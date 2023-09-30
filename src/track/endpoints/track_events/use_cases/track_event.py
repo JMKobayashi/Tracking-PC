@@ -1,4 +1,3 @@
-import logging
 from datetime import datetime
 
 from track.endpoints.base_use_case import BaseUseCase
@@ -11,6 +10,5 @@ class TrackEventsUseCase(BaseUseCase):
         self._service = track_event_service
 
     async def run(self):
-        logging.info('Running Track event creation')
         track_event = TrackEventCreate(request='POST /track', event_time=datetime.now())
         return await self._service.create_track_event(track_event.dict())
