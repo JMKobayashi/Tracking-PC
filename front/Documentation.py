@@ -38,8 +38,8 @@ requirements for this challenge.
 As previously mentioned, you can use Poetry to create your virtual environment and test all parts of this
 challenge. However, if you want to install the necessary libraries to run only the script, you will need to install
 the following Python modules, and of course you will need a Python version instaled:
-- requests;
-- apscheduler.
+- requests=2.31.0;
+- apscheduler=3.10.4.
 
 To install these modules separately, simply run `pip install <module_name>`.
 ### Execution
