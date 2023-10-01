@@ -14,4 +14,4 @@ Joe has some sketchy roommates, and he is suspicious that they might be using hi
    - A web page that displays the history of requests. This can just be a plain text list of requests and their timestamps.
 
 # Documentation
-To access the full documentation click in [this link]()
+To access the full documentation click in [this link](https://track-challenge-front-ucu2fzh5qa-uc.a.run.app)
