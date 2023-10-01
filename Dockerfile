@@ -12,7 +12,7 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends wget && \
 EXPOSE 8000
 WORKDIR /app
 
-ADD src/poetry.lock src/pyproject.toml /app/
+ADD poetry.lock pyproject.toml /app/
 
 RUN poetry install
 

@@ -2,13 +2,13 @@
 name = "track-information"
 
 description = "API for tracking when a PC is turned on"
-version = "0.0.0"
+version = "1.0.3"
 
 authors = ["James Kobayashi"]
 
 [tool.poetry.dependencies]
 
-python = "^3.11"
+python = ">3.9.7,<3.13"
 fastapi = "^0.99.1"
 uvicorn = "^0.20.0"
 motor = "3.1.1"
@@ -16,7 +16,8 @@ odmantic = "^0.9.2"
 dependency-injector = "^4.34.0"
 requests = "^2.31.0"
 apscheduler = "^3.10.4"
-mangum = "^0.17.0"
+streamlit = "^1.27.1"
+pandas = "^2.1.1"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "6.0.0"
