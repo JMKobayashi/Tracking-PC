@@ -1,4 +1,3 @@
-
 FROM python:3.11-slim
 
 ENV POETRY_VERSION=1.6.1 \
@@ -9,13 +8,13 @@ ENV POETRY_VERSION=1.6.1 \
 RUN apt-get -y update && apt-get install -y --no-install-recommends wget && \
     pip install "poetry==$POETRY_VERSION" && poetry --version
 
-EXPOSE 8000
+EXPOSE 8501
 WORKDIR /app
 
 ADD poetry.lock pyproject.toml /app/
 
 RUN poetry install
 
-COPY ./src/ .
+COPY ./front/ .
 
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+ENTRYPOINT ["streamlit", "run", "Documentation.py", "--server.port=8501", "--server.address=0.0.0.0"]

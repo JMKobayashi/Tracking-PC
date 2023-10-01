@@ -25,7 +25,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 st.header('Create Track Information')
-st.text('In this page you can test the creation of a Track document in database')
+st.text('On this page, you can experiment with creating a Track document in the database.')
 col1, col2 = st.columns([3, 1])
 col1.text_input('Endpoint URL', value=TRACK_URL, disabled=True)
 col2.write('')

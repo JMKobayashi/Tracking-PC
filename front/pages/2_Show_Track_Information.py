@@ -31,7 +31,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 st.header('Show Track Information')
-st.text('In this page you can test the fetching of all the documents in database')
+st.text('On this page, you can explore the retrieval of all documents within the database.')
 col1, col2 = st.columns([3, 1])
 col1.text_input('Endpoint URL', value=TRACK_EVENTS_URL, disabled=True)
 col2.write('')
